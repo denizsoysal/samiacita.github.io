@@ -3,7 +3,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 90vh;
-    background-color: #F8C8DC;
+    background-color: #fde9e9
+    ;
 }
 
 #noButton {
@@ -66,7 +67,7 @@ body {
     }
 
     img {
-        height: 60vh;
+        height: 30vh;
     }
 
     .btn {
