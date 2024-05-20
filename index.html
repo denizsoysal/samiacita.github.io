@@ -1,19 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="./styles.css">
+<head>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div id="passwordPrompt" class="container">
+        <div>
+            <h1 class="header_text">Please enter the password to access the site:</h1>
+        </div>
+        <div class="password_container">
+            <input type="password" id="passwordInput" placeholder="Enter password">
+            <button class="btn" onclick="checkPassword()">Submit</button>
+        </div>
+        <div id="popupMessage" class="popup"></div>
+        <script>
+            function checkPassword() {
+                var password = document.getElementById('passwordInput').value;
+                var correctPassword = '12/12/2023'; // Replace 'yourPasswordHere' with your actual password
+                var popupMessage = document.getElementById('popupMessage');
+                if (password === correctPassword) {
+                    popupMessage.innerHTML = 'OUIIIIIIIIIIIIIIIIIIIIII !';
+                    popupMessage.className = 'popup success';
+                    popupMessage.style.display = 'block';
+                    setTimeout(function() {
+                        popupMessage.style.display = 'none';
+                        document.getElementById('passwordPrompt').style.display = 'none';
+                        document.getElementById('mainContent').style.display = 'block';
+                    }, 2000);
+                } else {
+                    popupMessage.innerHTML = 'Oh nonnnnnn.. NIAAAAAAAAAAAAA';
+                    popupMessage.className = 'popup error';
+                    popupMessage.style.display = 'block';
+                    setTimeout(function() {
+                        popupMessage.style.display = 'none';
+                    }, 3000);
+                }
+            }
+        </script>
+    </div>
+    
         
-    </head> 
-    <body>
-        <div class="container">
-            <div >
-                <h1 class = "header_text">Euuuuh... Tu veux être à mes côtés pour la vie Samiacita ?</h1>
+        <div id="mainContent" class="container" style="display:none;">
+            <div>
+                <h1 class="header_text">Euuuuh... Tu veux être à mes côtés pour la vie Samiacita ?</h1>
             </div>
             <div class="gif_container">
                 <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHMzOHpmdHJsOHF2bHhqMW95dmJvOHQyZjhpNHBjcWo3MHA0d2o2aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/12BnpAj99ezEEY5wEg/giphy.gif" alt="Cute animated illustration">
             </div>
-            <div class = "buttons">
-                <button class="btn" id = "yesButton" onclick="nextPage()">Yes</button>
+            <div class="buttons">
+                <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
                 <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
                 <script>
                     function nextPage() {
@@ -29,6 +64,5 @@
                 </script> 
             </div>
         </div>
-       
     </body> 
 </html>
