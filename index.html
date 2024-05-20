@@ -6,11 +6,11 @@
 <body>
     <div id="passwordPrompt" class="container">
         <div>
-            <h1 class="header_text">Please enter the password to access the site:</h1>
+            <h1 class="header_text">Indice: une date au format DD/MM/YYYY hihihihihi</h1>
         </div>
         <div class="password_container">
             <input type="password" id="passwordInput" placeholder="Enter password">
-            <button class="btn" onclick="checkPassword()">Submit</button>
+            <button class="btn" onclick="checkPassword()">Ziouuu</button>
         </div>
         <div id="popupMessage" class="popup"></div>
         <script>
@@ -26,14 +26,14 @@
                         popupMessage.style.display = 'none';
                         document.getElementById('passwordPrompt').style.display = 'none';
                         document.getElementById('mainContent').style.display = 'block';
-                    }, 2000);
+                    }, 1000);
                 } else {
                     popupMessage.innerHTML = 'Oh nonnnnnn.. NIAAAAAAAAAAAAA';
                     popupMessage.className = 'popup error';
                     popupMessage.style.display = 'block';
                     setTimeout(function() {
                         popupMessage.style.display = 'none';
-                    }, 3000);
+                    }, 1000);
                 }
             }
         </script>
